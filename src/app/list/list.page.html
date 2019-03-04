@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+      <ion-item>
+        <ion-label floating>Mobile</ion-label>
+        <ion-input [(ngModel)]="mobile" type="text" value="" readonly = {{!editable}}></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-input [(ngModel)]="address"  type="text" value="" readonly =  {{!editable}}></ion-input>
+        </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [(ngModel)]="password"  type="password" value="" readonly =  {{!editable}}></ion-input>
+      </ion-item>
+    
+    </ion-list>
+    
+    <div padding>
+        
+        <ion-button *ngIf="editable" color="primary" (click)="edit()">Save</ion-button>
+        <ion-button *ngIf="!editable" color="primary" (click)="edit()">Edit</ion-button>        
+    </div>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>
